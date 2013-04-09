@@ -7,8 +7,8 @@
 module Main where
 
 import Graphics.UI.WX
-import List
-import Maybe
+import Data.List
+import Data.Maybe
 
 main :: IO ()
 main = start gui
