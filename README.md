@@ -2,7 +2,7 @@ Introduction:
 ------------
 Original Problem: http://en.wikipedia.org/wiki/Bridge_and_torch_problem
 
-Generalized Solution by Professor Roland Backhouse: www.cs.nott.ac.uk/~rcb/MPC/GeneralTorchProblem.ps
+General Solution by Professor Roland Backhouse: www.cs.nott.ac.uk/~rcb/MPC/GeneralTorchProblem.ps
 
 Installation and Usage: 
 --------------------
