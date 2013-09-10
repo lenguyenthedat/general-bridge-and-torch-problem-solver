@@ -2,7 +2,7 @@
 -- init.  For further documentation, see 
 -- http://haskell.org/cabal/users-guide/
 
-name:                General-Capcity-C-Torch-Problem-Solver
+name:                TorchSolver
 version:             0.1.0.0
 synopsis:            A Solver for general torch problem.
 -- description:         
@@ -14,9 +14,9 @@ maintainer:          thedat.lenguyen@gmail.com
 -- copyright:           
 category:            Game
 build-type:          Simple
-cabal-version:       >=1.8
+cabal-version:       >=1.6
 
-executable General-Capcity-C-Torch-Problem-Solver
+executable TorchSolver
   main-is:             TorchSolver.hs
   -- other-modules:       
   build-depends:       base >=4,
