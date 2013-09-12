@@ -1,7 +1,7 @@
  -- A torch problem solver
  -- Copyright (C) 2008-2009 Le Nguyen The Dat
  -- University of Nottingham 
- -- School of Computer Science  	
+ -- School of Computer Science      
  -- Contact email: thedat.lenguyen@gmail.com
 
 module Main where
@@ -14,31 +14,32 @@ main :: IO ()
 main = start gui
 
 gui :: IO ()
-gui = do input  <- frame [text := "Torch Problem - Input Information"]
-         inpN   <- entry input []
-         inpC   <- entry input []
-         inpTs  <- entry input []
-         button <- button input [ text := "OK"
-                         , on command := do sN <- get inpN text 
-                                            sC <- get inpC text
-                                            sTs <- get inpTs text
-                                            output <- frame [text := "Torch Problem - Result"]
-                                            close input
-                                            set output [ layout := margin 10 (column 20
-                                                                         [  label "Result"
-                                                                         ,  label (showResult ( getFirstResults (read sN) (read sC) (readTimes sTs)) )
-                                                                         ]) ]
-						 ]
-         set input [ layout := margin 10 (column 20
-                                         [  (label "Input Information")
-                                         ,  (label "Number of People")
-                                         ,  (widget inpN)
-                                         ,  (label "Capacity of the Bridge")
-                                         ,  (widget inpC)
-										 ,  (label "Times to cross the Bridge for everyone (seperated by spaces, example: 10 2 5 15 20)")
-                                         ,  (widget inpTs)
-                                         ,  (widget button)
-                                         ]) ]
+gui = do 
+    input  <- frame [text := "Torch Problem - Input Information"]
+    inpN   <- entry input []
+    inpC   <- entry input []
+    inpTs  <- entry input []
+    button <- button input [ text := "OK"
+      , on command := do sN <- get inpN text 
+      sC <- get inpC text
+      sTs <- get inpTs text
+      output <- frame [text := "Torch Problem - Result"]
+      close input
+      set output [ layout := margin 10 (column 20
+      [  label "Result"
+      ,  label (showResult ( getFirstResults (read sN) (read sC) (readTimes sTs)) )
+      ]) ]
+      ]
+    set input [ layout := margin 10 (column 20
+      [  (label "Input Information")
+      ,  (label "Number of People")
+      ,  (widget inpN)
+      ,  (label "Capacity of the Bridge")
+      ,  (widget inpC)
+      ,  (label "Times to cross the Bridge for everyone (seperated by spaces, example: 10 2 5 15 20)")
+      ,  (widget inpTs)
+      ,  (widget button)
+      ]) ]
 
 type Trip            =  [Person]
 type PureTrip        =  Trip
@@ -59,8 +60,8 @@ readTimes s = map read (words s)
 
 showSequence ::Show a => [a] -> String
 showSequence [] = ""
-showSequence (x:[]) = show x ++ " goes across                                                    " 
-showSequence (x:y:[]) = show x ++ " goes across                                                    " ++ "\n" ++ show y ++ " returns                                                    "
+showSequence (x:[]) = show x ++ " goes across..." 
+showSequence (x:y:[]) = show x ++ " goes across..." ++ "\n" ++ show y ++ " returns..."
 showSequence xs = (showSequence (take 2 xs)) ++ "\n" ++ (showSequence (drop 2 xs))
 
 showResult :: Show a => ([a],Int) -> String
@@ -130,12 +131,12 @@ scheduleMixedTrips :: N -> C -> [(ForwardBag,Int,Int)]
 scheduleMixedTrips n c = filter (\(fb,n,p) -> p >=0) (map makeLastMixedTrip (scheduleFullMixedTrips n c))
 -- type of the result: [bag, n, exceed p]
 
-	
+    
 scheduleMixedFinalizedNomadTrips :: N -> C -> [(ForwardBag,Int,Int,Int)]
 scheduleMixedFinalizedNomadTrips n c = concat (map (finalizeNomadCount) (scheduleMixedTrips n c))
 -- type of the result: [bag, n, exceed p, n'']
 -- (if p = 0 then finalizedNomad = 0)
-	
+    
 finalizeNomadCount :: (ForwardBag,Int,Int) -> [(ForwardBag,Int,Int,Int)]
 finalizeNomadCount (fb,n,p) | (p > 0) = map (\i -> (fb,n,p,i)) [(max n 2)..(min (p+1) (length (head fb))) ]
                             | (p == 0) = [(fb,n,p,0)]
