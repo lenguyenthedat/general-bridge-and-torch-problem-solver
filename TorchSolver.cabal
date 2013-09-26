@@ -19,6 +19,4 @@ cabal-version:       >=1.6
 executable TorchSolver
   main-is:             TorchSolver.hs
   -- other-modules:       
-  build-depends:       base >=4,
-                       wxcore,
-                       wx
+  build-depends:       base >=4

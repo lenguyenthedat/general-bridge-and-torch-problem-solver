@@ -6,40 +6,16 @@
 
 module Main where
 
-import Graphics.UI.WX
+--import Graphics.UI.WX
 import Data.List
 import Data.Maybe
 
 main :: IO ()
-main = start gui
-
-gui :: IO ()
-gui = do 
-    input  <- frame [text := "Torch Problem - Input Information"]
-    inpN   <- entry input []
-    inpC   <- entry input []
-    inpTs  <- entry input []
-    button <- button input [ text := "OK"
-      , on command := do sN <- get inpN text 
-      sC <- get inpC text
-      sTs <- get inpTs text
-      output <- frame [text := "Torch Problem - Result"]
-      close input
-      set output [ layout := margin 10 (column 20
-      [  label "Result"
-      ,  label (showResult ( getFirstResults (read sN) (read sC) (readTimes sTs)) )
-      ]) ]
-      ]
-    set input [ layout := margin 10 (column 20
-      [  (label "Input Information")
-      ,  (label "Number of People")
-      ,  (widget inpN)
-      ,  (label "Capacity of the Bridge")
-      ,  (widget inpC)
-      ,  (label "Times to cross the Bridge for everyone (seperated by spaces, example: 10 2 5 15 20)")
-      ,  (widget inpTs)
-      ,  (widget button)
-      ]) ]
+main = do 
+    inpN   <- getLine
+    inpC   <- getLine
+    times  <- getLine
+    putStrLn $ showResult $ getFirstResults (read inpN) (read inpC) (readTimes times)
 
 type Trip            =  [Person]
 type PureTrip        =  Trip
@@ -54,6 +30,9 @@ type Nomad           =  Person
 type ForwardBag      =  [Trip]
 type Sequence        =  [Trip]
 type Time            =  Int
+
+getList :: Int -> IO [String]
+getList n = if n==0 then return [] else do i <- getLine; is <- getList(n-1); return (i:is)
 
 readTimes :: Read a => String -> [a]
 readTimes s = map read (words s) 
