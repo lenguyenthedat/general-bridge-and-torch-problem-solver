@@ -6,9 +6,36 @@ General Solution by Professor Roland Backhouse: www.cs.nott.ac.uk/~rcb/MPC/Gener
 
 Installation and Usage: 
 --------------------
-You will need WxHaskell installed: http://www.haskell.org/haskellwiki/WxHaskell
- 
-Build and run:
 
-    $ ghc TorchSolver.hs
-    $ ./TorchSolver
+    ~/GitHub/cabinet/General-Capacity-C-Torch-Problem-Solver $ cabal install
+    
+    Resolving dependencies...
+    Configuring TorchSolver-0.1.0.0...
+    Building TorchSolver-0.1.0.0...
+    Preprocessing executable 'TorchSolver' for TorchSolver-0.1.0.0...
+    Warning: No documentation was generated as this package does not contain a
+    library. Perhaps you want to use the --executables flag.
+    Installing executable(s) in
+    ~/Library/Haskell/ghc-7.6.3/lib/TorchSolver-0.1.0.0/bin
+    Installed TorchSolver-0.1.0.0
+    Updating documentation index
+    ~/Library/Haskell/doc/index.html
+
+    ~/GitHub/cabinet/General-Capacity-C-Torch-Problem-Solver $ TorchSolver 
+    
+    Input Total Number of People:
+    4
+    Input Bridge capacity:
+    2
+    Input time taken for each person, seperated by 1 space:
+    1 2 5 8
+    Best Sequences: 
+     
+    [1,2] goes across...
+    [1] returns...
+    [5,8] goes across...
+    [2] returns...
+    [1,2] goes across...
+     
+    Crossing Time: 15 minutes.
+ 
