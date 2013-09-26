@@ -12,8 +12,11 @@ import Data.Maybe
 
 main :: IO ()
 main = do 
+    putStrLn "Input Total Number of People:"
     inpN   <- getLine
+    putStrLn "Input Bridge capacity:"
     inpC   <- getLine
+    putStrLn "Input time taken for each person, seperated by 1 space:"
     times  <- getLine
     putStrLn $ showResult $ getFirstResults (read inpN) (read inpC) (readTimes times)
 
