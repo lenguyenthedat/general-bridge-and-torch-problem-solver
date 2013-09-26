@@ -39,8 +39,8 @@ readTimes s = map read (words s)
 
 showSequence ::Show a => [a] -> String
 showSequence [] = ""
-showSequence (x:[]) = show x ++ " goes across..." 
-showSequence (x:y:[]) = show x ++ " goes across..." ++ "\n" ++ show y ++ " returns..."
+showSequence (x:[]) = show x ++ " go(es) across..." 
+showSequence (x:y:[]) = show x ++ " go(es) across..." ++ "\n" ++ show y ++ " return(s)..."
 showSequence xs = (showSequence (take 2 xs)) ++ "\n" ++ (showSequence (drop 2 xs))
 
 showResult :: Show a => ([a],Int) -> String
