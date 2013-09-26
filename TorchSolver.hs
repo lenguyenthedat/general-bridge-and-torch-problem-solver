@@ -34,9 +34,6 @@ type ForwardBag      =  [Trip]
 type Sequence        =  [Trip]
 type Time            =  Int
 
-getList :: Int -> IO [String]
-getList n = if n==0 then return [] else do i <- getLine; is <- getList(n-1); return (i:is)
-
 readTimes :: Read a => String -> [a]
 readTimes s = map read (words s) 
 
@@ -48,8 +45,6 @@ showSequence xs = (showSequence (take 2 xs)) ++ "\n" ++ (showSequence (drop 2 xs
 
 showResult :: Show a => ([a],Int) -> String
 showResult (xs,t) = "Best Sequences: \n \n" ++ showSequence xs ++ "\n \n" ++ "Crossing Time: " ++ show t ++ " minutes.\n" 
-
-
 
 ----------------------------- SCHEDULERS -----------------------------------------------------------------------
 
