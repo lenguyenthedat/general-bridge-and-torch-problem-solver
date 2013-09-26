@@ -144,7 +144,7 @@ finishedBags n c ts = map (\fb -> (fb,bagTimeCost fb (sort ts))) (pruneFinishedB
 
 pruneFinishedBags :: [ForwardBag] -> [ForwardBag]
 pruneFinishedBags [] = []
-pruneFinishedBags (xs:xss) | (length (bagToPureTrips xs) == (countPureTripsServed xs)) = (xs:(pruneFinishedBags xss)) 
+pruneFinishedBags (xs:xss) | (length (bagToPureTrips xs) <= (countPureTripsServed xs)) = (xs:(pruneFinishedBags xss)) 
                            | otherwise = pruneFinishedBags xss
 
 
