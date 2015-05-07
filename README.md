@@ -1,11 +1,17 @@
 Introduction:
 ------------
-Original Problem: http://en.wikipedia.org/wiki/Bridge_and_torch_problem
+Original Problem on [Wikipedia](http://en.wikipedia.org/wiki/Bridge_and_torch_problem).
 
-General Solution by Professor Roland Backhouse: www.cs.nott.ac.uk/~rcb/MPC/GeneralTorchProblem.ps
+Generalized Problem Definition & Solution by Professor [Roland Backhouse](http://www.cs.nott.ac.uk/~rcb/): 
+- [Slides (pdf)](http://aps.cs.nott.ac.uk/wp-content/uploads/2008/05/capacity-c-torch-problem-aps-club.pdf)
+- [Paper (ps)](http://www.cs.nott.ac.uk/~rcb/MPC/GeneralTorchProblem.ps)
+
+Solution Design:
+----------------
+![Design](https://github.com/lenguyenthedat/general-bridge-and-torch-problem-solver/blob/master/Overview.png)
 
 Installation and Usage: 
---------------------
+-----------------------
 
     ~/GitHub/cabinet/General-Capacity-C-Torch-Problem-Solver $ cabal install
     
