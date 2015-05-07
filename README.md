@@ -1,6 +1,6 @@
 Introduction:
 ------------
-Original Problem on [Wikipedia](http://en.wikipedia.org/wiki/Bridge_and_torch_problem).
+Original Problem on Wikipedia's [Bridge and Torch problem](http://en.wikipedia.org/wiki/Bridge_and_torch_problem).
 
 Generalized Problem Definition & Solution by Professor [Roland Backhouse](http://www.cs.nott.ac.uk/~rcb/): 
 - [Slides (pdf)](http://aps.cs.nott.ac.uk/wp-content/uploads/2008/05/capacity-c-torch-problem-aps-club.pdf)
