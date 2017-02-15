@@ -10,7 +10,6 @@ homepage:            https://github.com/lenguyenthedat/General-Capacity-C-Torch-
 -- license:             
 license-file:        LICENSE
 author:              Dat Le
-maintainer:          thedat.lenguyen@gmail.com
 -- copyright:           
 category:            Game
 build-type:          Simple
