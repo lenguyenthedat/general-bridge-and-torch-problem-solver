@@ -2,7 +2,6 @@
  -- Copyright (C) 2008-2009 Le Nguyen The Dat
  -- University of Nottingham 
  -- School of Computer Science      
- -- Contact email: thedat.lenguyen@gmail.com
 
 module Main where
 
